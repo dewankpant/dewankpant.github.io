@@ -78,10 +78,6 @@
 
 <script type="text/javascript">
 	
-// Import Pushy Service Worker 1.0.2
-
-importScripts('https://sdk.pushy.me/web/1.0.2/pushy-service-worker.js');
-
 Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken) {
     // Print device token to console
     console.log('Pushy device token: ' + deviceToken);
@@ -106,7 +102,9 @@ if (Pushy.isRegistered()) {
 }
 </script>
 
-<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" onload="">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
             <div class="mdl-layout--large-screen-only mdl-layout__header-row">
