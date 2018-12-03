@@ -4,14 +4,14 @@
 // Listen for incoming push notifications
 self.addEventListener('push', function (event) {
     // Extract payload as JSON object, default to empty object
-    var data = event.data.json() || {"true"};
+    var data = event.data.json() || {};
 
     // Extract notification image URL
-    var image = data.image || 'http://www.logotypes101.com/logos/548/D24FC139C1C2463F584EBB0894559B92/nice_logo.png';
+    var image = data.image || 'https://sdk.pushy.me/web/assets/img/icon.png';
 
     // Notification title and body
-    var title = data.title || 'NICE-MFA';
-    var body = data.message || 'Send Contexts';
+    var title = data.title || '';
+    var body = data.message || '';
 
     // Notification options
     var options = {
