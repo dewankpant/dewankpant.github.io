@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>
+Login page
+</title>
+</head>
+<body>
+
+
+<html>
+<body>
+
+
+
+
+
+</script>
+
+<div>
+
+<h1 style="text-align="center";font-size:20pt;
+color:#00FF00;>
+Nice-MFA
+</h1>
+
+
+
+  
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        function submitform(){
+            //get value of input whos id is username
+            var req = {username: $('input#username').val(), code: $('input#code').val()};
+            
+
+            $.ajax({
+                url: "http://52.15.230.213:5000/verify", 
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(req),
+                dataType:'json',
+                success: function(data){
+                	console.log(data);
+                	if (data.status == "true")
+                	{
+                		document.write('<iframe src="https://dewankpant.github.io/BrowserContext" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">'); 
+                		//alert('yo');
+
+                		//location.replace("https://dewankpant.github.io/BrowserContext")
+
+
+                	}
+
+                	else 
+                	{
+
+                		alert("Incorrect Information!")
+                	}
+                    
+                    
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <form id="myForm">
+         Username: <input id="username" name="username">
+         Code: <input id ="code" type="password" name="code" placeholder="Registeration Code" >
+    </form>
+    <button onclick="submitform();"> Register This Device</button>
+</body>
+</html>
+
+
+
+
+
