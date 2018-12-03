@@ -83,6 +83,8 @@
     var el = document.getElementById("device");
     var browser = document.getElementById("browser");
     var os = document.getElementById("os");
+    console.log(el, browser, os);
+
     var parser = new UAParser();
     if (parser.getDevice() && parser.getDevice().name) {
         el.innerHTML += '<b>Device:</b> ' + JSON.stringify(parser.getDevice()) + '<br>';
@@ -194,8 +196,9 @@
 Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken) {
     // Print device token to console
     console.log('Pushy device token: ' + deviceToken);
-    console.log('username/' + getAllUrlParams().username);
     console.log('osname')
+    console.log('username/' + getAllUrlParams().username);
+
     console.log(parser.getOS().name);
     
     console.log(parser.getOS().version);
