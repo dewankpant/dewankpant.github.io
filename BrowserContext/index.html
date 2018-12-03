@@ -100,10 +100,13 @@
 	
 Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken) {
     // Print device token to console
+    var parser = new UAParser();
     console.log('Pushy device token: ' + deviceToken);
-    console.log('osname')
+    
     console.log('username/' + getAllUrlParams().username);
-
+    var os=  parser.getOS().name+ " " +parser.getOS().version
+    var context = [{OS: os }]
+    console.log(context)
     console.log(parser.getOS().name);
     
     console.log(parser.getOS().version);
