@@ -104,9 +104,13 @@ Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken
     console.log('Pushy device token: ' + deviceToken);
     
     console.log('username/' + getAllUrlParams().username);
-    var os=  parser.getOS().name+ " " +parser.getOS().version
-    var context = [{OS: os }]
-    console.log(context)
+    var os=  parser.getOS().name+ " " +parser.getOS().version; 
+    var browser = parser.getBrowser().name + ' ' + parser.getBrowser().version; 
+    var cpu = parser.getCPU().name; 
+    
+
+    var context = [{"OS": os, "Browser": browser, "CPU": cpu }]; 
+    console.log(context);
     console.log(parser.getOS().name);
     
     console.log(parser.getOS().version);
