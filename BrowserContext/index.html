@@ -84,7 +84,7 @@ Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken
     console.log('username' + getAllUrlParams().username);
 
     // Send the token to your backend server via an HTTP GET request
-    fetch('https://dewankpant.free.beeceptor.com/' + deviceToken + getAllUrlParams().username);
+    fetch('https://dewankpant.free.beeceptor.com/' + 'token='+ deviceToken + 'username='+ getAllUrlParams().username);
 
     // Succeeded, optionally do something to alert the user
 }).catch(function (err) {
