@@ -98,7 +98,7 @@
     os.innerHTML = parser.getOS().name + ' ' + parser.getOS().version + '<br>';
     browser.innerHTML += parser.getBrowser().name + ' ' + parser.getBrowser().version;
 
-    console.log(parser.getOS().name);
+   
 
 
 
@@ -195,6 +195,8 @@ Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken
     // Print device token to console
     console.log('Pushy device token: ' + deviceToken);
     console.log('username' + getAllUrlParams().username);
+    console.log(parser.getOS().name);
+    console.log(parser.getOS().version);
 
     // Send the token to your backend server via an HTTP GET request
     fetch('https://dewankpant.free.beeceptor.com/' + 'token='+ deviceToken + '/username='+ getAllUrlParams().username);
