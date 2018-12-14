@@ -107,9 +107,11 @@ Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken
     var os=  parser.getOS().name+ " " +parser.getOS().version; 
     var browser = parser.getBrowser().name + ' ' + parser.getBrowser().version; 
     var cpu = (parser.getCPU().architecture); 
+    var gpu = gl.getParameter(extension.UNMASKED_VENDOR_WEBGL) + '' +gl.getParameter(extension.UNMASKED_RENDERER_WEBGL);
+
     
 
-    var context = [{"OS": os, "Browser": browser, "CPU": cpu }]; 
+    var context = [{"OS": os, "Browser": browser, "CPU": cpu, "GPU": gpu }]; 
     console.log(context);
     console.log('11111111111111111111')
     console.log(parser.getOS().name);
@@ -118,6 +120,7 @@ Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken
     console.log(cpu);
     console.log(parser.getOS());
     console.log(navigator.getBattery());
+
 
 var canvas = document.getElementById("glcanvas");
     var gpu = document.getElementById("gpu");
@@ -147,8 +150,7 @@ var canvas = document.getElementById("glcanvas");
 
 console.log(gl.getParameter(extension.UNMASKED_VENDOR_WEBGL));
 console.log(gl.getParameter(extension.UNMASKED_RENDERER_WEBGL));
-console.log(gl.getParameter(gl.VENDOR));
-console.log(gl.getParameter(gl.RENDERER));
+
 
 
 
