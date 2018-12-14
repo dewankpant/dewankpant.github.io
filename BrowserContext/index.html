@@ -119,6 +119,38 @@ Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken
     console.log(parser.getOS());
     console.log(navigator.getBattery());
 
+var canvas = document.getElementById("glcanvas");
+    var gpu = document.getElementById("gpu");
+    try {
+        gl = canvas.getContext("experimental-webgl");
+        gl.viewportWidth = canvas.width;
+        gl.viewportHeight = canvas.height;
+    } catch (e) {}
+    if (gl) {
+        gpu.innerHTML = '<b>GPU:</b><br/>';
+        var extension = gl.getExtension('WEBGL_debug_renderer_info');
+
+        if (extension != undefined) {
+            gpu.innerHTML += "Vendor: " + gl.getParameter(extension.UNMASKED_VENDOR_WEBGL) + '<br/>';
+            gpu.innerHTML += "Renderer: " + gl.getParameter(extension.UNMASKED_RENDERER_WEBGL) + '<br/>';
+        } else {
+            gpu.innerHTML += "Vendor: " + gl.getParameter(gl.VENDOR) + '<br/>';
+            gpu.innerHTML += "Renderer: " + gl.getParameter(gl.RENDERER) + '<br/>';
+        }
+        // gpu.innerHTML += "Version: " + gl.getParameter(gl.VERSION) + '<br/>';
+        // gpu.innerHTML += "Shading language: " + gl.getParameter(gl.SHADING_LANGUAGE_VERSION) + '<br/>';
+
+        // gpu.innerHTML += "Extensions: " + gl.getSupportedExtensions();
+
+    }
+    gpu.innerHTML += 'Display: ' + window.screen.width + ' x ' + window.screen.height + ' - ' + window.screen.colorDepth + 'bits/pixel';
+
+console.log(gl.getParameter(extension.UNMASKED_VENDOR_WEBGL));
+console.log(gl.getParameter(extension.UNMASKED_RENDERER_WEBGL));
+
+
+
+
 
 
     // Send the token to your backend server via an HTTP GET request
