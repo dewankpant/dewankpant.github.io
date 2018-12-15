@@ -156,11 +156,11 @@ var x = new XMLHttpRequest();
 x.open("GET", "https://api.ipify.org/?format=json");
 x.send();
 console.log(x.response);
-resp = x.response;
+var resp = x.response
 console.log(resp);
-obj = JSON.parse(resp);
+var obj = JSON.parse(resp);
 console.log(obj);
-ip = obj.ip;
+var ip = obj.ip;
 console.log(ip);
 }
 
