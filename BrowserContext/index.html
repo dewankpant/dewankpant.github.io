@@ -150,6 +150,14 @@ console.log(gl.getParameter(extension.UNMASKED_RENDERER_WEBGL));
 
 var gpu = gl.getParameter(extension.UNMASKED_VENDOR_WEBGL) + '' +gl.getParameter(extension.UNMASKED_RENDERER_WEBGL);
 
+var x = new XMLHttpRequest();
+
+x.open("GET", "https://api.ipify.org/?format=json");
+x.send();
+ip = x.response
+console.log(ip.response);
+
+
 console.log(context);
 var context = [{"OS": os, "Browser": browser, "CPU": cpu, "GPU": gpu }]; 
    
