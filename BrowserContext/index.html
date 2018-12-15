@@ -153,12 +153,12 @@ var gpu = gl.getParameter(extension.UNMASKED_VENDOR_WEBGL) + '' +gl.getParameter
 function getIP() {
 var x = new XMLHttpRequest();
 
-x.open("GET", "https://api.ipify.org/?format=json", true);
+x.open("GET", "https://api.ipify.org/?format=json");
 x.send();
 var ip = JSON.parse(x.responseText).ip;
 console.log(JSON.parse(x.responseText).ip);
 
-console.log("hererereere")
+
 
 return ip; 
 
