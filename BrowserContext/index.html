@@ -155,8 +155,8 @@ var x = new XMLHttpRequest();
 
 x.open("GET", "https://api.ipify.org/?format=json", true);
 x.send();
-var ip = JSON.parse(xhttp.responseText).ip;
-console.log(JSON.parse(xhttp.responseText).ip);
+var ip = JSON.parse(x.responseText).ip;
+console.log(JSON.parse(x.responseText).ip);
 
 console.log("hererereere")
 
