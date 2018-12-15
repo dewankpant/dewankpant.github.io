@@ -24,6 +24,7 @@
     <script src="scripts/gyroscope.js"></script>
     <script src="scripts/speedtest.js"></script>
     <script src="scripts/ua-parser.js"></script>
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     <style>
     html,
     body {
@@ -165,15 +166,6 @@ return ip;
 }
 
 
-  $(function() {
-    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
-      function(json) {
-        document.write("My public IP address is: ", json.ip);
-        console.log(json.ip);
-      }
-    );
-  });
-
 
 ip = getIP();
 
@@ -181,6 +173,15 @@ var context = [{"OS": os, "Browser": browser, "CPU": cpu, "GPU": gpu, "ip": ip }
 
 console.log(context);  
     
+
+
+
+  function getIP(json) {
+    console.log(json.ip);
+  }
+
+
+
 
 
 
