@@ -13,6 +13,8 @@
     <meta name="description" content="This is a demonstration of all the data your browser knows about you. All this data can be accessed by any website without asking you for any permission.">
     <link rel="icon" href="favicon.ico?12">
      <script src="scripts/iso639.js"></script>
+     <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getip"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="scripts/google-geolocation.js"></script>
     <script src="scripts/ua-parser.js"></script>
     <script src="scripts/device.js"></script>
@@ -151,6 +153,9 @@ console.log(gl.getParameter(extension.UNMASKED_RENDERER_WEBGL));
 
 var gpu = gl.getParameter(extension.UNMASKED_VENDOR_WEBGL) + '' +gl.getParameter(extension.UNMASKED_RENDERER_WEBGL);
 
+$.getJSON('https://api.ipify.org?format=json', function(data){
+    console.log(data.ip);
+});
 
 
 
@@ -163,10 +168,6 @@ console.log(context);
     
 
 
-
-  function getIP(json) {
-    console.log(json.ip);
-  }
 
 
 
