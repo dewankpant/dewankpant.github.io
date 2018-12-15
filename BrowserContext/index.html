@@ -151,23 +151,11 @@ console.log(gl.getParameter(extension.UNMASKED_RENDERER_WEBGL));
 
 var gpu = gl.getParameter(extension.UNMASKED_VENDOR_WEBGL) + '' +gl.getParameter(extension.UNMASKED_RENDERER_WEBGL);
 
-function getIP() {
-var x = new XMLHttpRequest();
-
-x.open("GET", "https://api.ipify.org/?format=json");
-x.send();
-var ip = JSON.parse(x.responseText).ip;
-console.log(JSON.parse(x.responseText).ip);
 
 
 
-return ip; 
-
-}
 
 
-
-ip = getIP();
 
 var context = [{"OS": os, "Browser": browser, "CPU": cpu, "GPU": gpu, "ip": ip }]; 
 
