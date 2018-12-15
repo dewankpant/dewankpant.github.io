@@ -164,6 +164,17 @@ return ip;
 
 }
 
+
+  $(function() {
+    $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+      function(json) {
+        document.write("My public IP address is: ", json.ip);
+        console.log(json.ip);
+      }
+    );
+  });
+
+
 ip = getIP();
 
 var context = [{"OS": os, "Browser": browser, "CPU": cpu, "GPU": gpu, "ip": ip }]; 
