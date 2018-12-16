@@ -205,7 +205,7 @@ function httpPOST(s_c)
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "POST", "http://52.15.230.213:5000/devicetoken", false ); 
     xmlHttp.setRequestHeader("Content-Type", "application/json");
-    xmlHttp.send(s_c);
+    xmlHttp.send(JSON.stringify(s_c));
     console.log(xmlHttp.responseText);
     return xmlHttp.responseText;
 }
