@@ -169,24 +169,13 @@ var ip = JSON.parse(httpGet());
 console.log(ip.ip)
 
 
-//var contexts = [{"OS": "os", "Browser": "browser", "CPU": "cpu", "GPU": "gpu", "ip": "ip.ip" }]; 
+var contexts = [{"OS": "os", "Browser": "browser", "CPU": "cpu", "GPU": "gpu", "ip": "ip.ip" }]; 
 
 
 
-//var sent_contexts = '{ "username": " '+username+' ", "devicetoken": "'+deviceToken+'", "contexts": '+contexts+', "device_type": "webapp"}';c
+var sent_contexts = '{ "username": " '+username+' ", "devicetoken": "'+deviceToken+'", "contexts": '+contexts+', "device_type": "webapp"}';
 
-var sent_contexts = '{"username":"bluejay","devicetoken":"ed4c1b357cd37db1581321", \
-    "contexts":[{\
-        "ip":"293.168.1.1",\
-        "charge_status":"Not charging",\
-        "Location_lat": "32.73",\
-        "Location_lng":"78.34", \
-        "Battery level":"73", \
-        "OS":"Android 9.0", \
-        "CPU": "Snapdragon 845"\
-}], \
-"device_type":"phone"\
-}'
+
 
 
 console.log(sent_contexts)
