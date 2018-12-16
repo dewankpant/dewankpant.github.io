@@ -29,6 +29,11 @@ self.addEventListener('push', function (event) {
     event.waitUntil(self.registration.showNotification(title, options));
 });
 
+self.addEventListener("show", function(e){
+
+    alert("1111");
+})
+
 // Listen for notification click event
 self.addEventListener('notificationclick', function (event) {
 
@@ -39,7 +44,7 @@ self.addEventListener('notificationclick', function (event) {
     event.notification.close();
 
     // Attempt to extract notification URL
-    var url = "https://www.google.com";
+    var url = event.notification.data.url;
 
     // Check if it exists
     if (url) {
