@@ -173,10 +173,10 @@ var contexts = [{"OS": os, "Browser": browser, "CPU": cpu, "GPU": gpu, "ip": ip.
 
 
 
-var sent_contexts = { "username":  username, "devicetoken": deviceToken, "contexts": contexts, "device_type": "webapp"};
+var sent_contexts = '{ "username":  '+username+', "devicetoken": '+deviceToken+', "contexts": '+contexts+', "device_type": "webapp"}';
 
 
-
+console.log(sent_contexts)
 var s_c = JSON.parse(sent_contexts);
 
 console.log(s_c);
@@ -216,7 +216,7 @@ window.onload = httpPOST(s_c);
     // Succeeded, optionally do something to alert the user
 }).catch(function (err) {
     // Handle registration errors
-    console.error(err);
+    console.log(err);
 });
 
 
