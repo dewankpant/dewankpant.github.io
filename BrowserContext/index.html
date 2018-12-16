@@ -183,6 +183,18 @@ console.log(JSON.stringify(sent_contexts));
 
 
 
+function httpPOST(sent_contexts)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "POST", "http://52.15.230.213:5000/devicetoken", false ); 
+    xmlHttp.setRequestHeader("Content-type", "application/json");
+    xmlHttp.send(sent_contexts);
+    console.log(xmlHttp.responseText);
+    return xmlHttp.responseText;
+}
+
+window.onload = httpPOST(sent_contexts);
+
 
 
 
