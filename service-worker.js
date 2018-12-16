@@ -61,8 +61,11 @@ self.addEventListener('notificationclick', function (event) {
 
     // Attempt to extract notification URL
 <<<<<<< HEAD
+<<<<<<< HEAD
     var url = "https://www.facebook.com";
 =======
+=======
+>>>>>>> parent of 4be2a1c... Update service-worker.js
     var url = event.notification.data.url;
 
     // Check if it exists
