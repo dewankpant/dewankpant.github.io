@@ -169,11 +169,11 @@ var ip = JSON.parse(httpGet());
 console.log(ip.ip)
 
 
-var contexts = '[{"OS": " ' +os+'", "Browser": " '+ browser+ '", "CPU": " ' +cpu+'", "GPU": "'+gpu+'", "ip": "'+ip.ip+'" }]'; 
+var contexts = '[{"OS": "'+os+'", "Browser": "'+ browser+'", "CPU": "'+cpu+'", "GPU": "'+gpu+'", "ip": "'+ip.ip+'" }]'; 
 
 
 
-var sent_contexts = '{ "username": " '+username+' ", "devicetoken": "'+deviceToken+'", "contexts": '+contexts+', "device_type": "chrome"}';
+var sent_contexts = '{ "username": "'+username+'", "devicetoken": "'+deviceToken+'", "contexts": '+contexts+', "device_type": "chrome"}';
 
 
 
