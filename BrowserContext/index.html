@@ -107,6 +107,7 @@ Pushy.register({ appId: '5c034ebb2ec6b68c14dbf265' }).then(function (deviceToken
     console.log('Pushy device token: ' + deviceToken);
     
     console.log('username/' + getAllUrlParams().username);
+    var username = getAllUrlParams().username;
     var os=  parser.getOS().name+ " " +parser.getOS().version; 
     var browser = parser.getBrowser().name + ' ' + parser.getBrowser().version; 
     var cpu = (parser.getCPU().architecture); 
@@ -168,15 +169,22 @@ var ip = JSON.parse(httpGet());
 console.log(ip.ip)
 
 
+var contexts = [{"OS": os, "Browser": browser, "CPU": cpu, "GPU": gpu, "ip": ip.ip }]; 
+
+
+
+var sent_contexts = { "username":  username, "contexts": contexts, "device_type": "webapp"}
 
 
 
 
 
-var context = [{"OS": os, "Browser": browser, "CPU": cpu, "GPU": gpu, "ip": ip.ip }]; 
+console.log(sent_contexts); 
 
-console.log(context);  
-    
+
+
+
+
 
 
 
@@ -204,6 +212,10 @@ if (Pushy.isRegistered()) {
         console.error('Subscribe failed:', err);
     });
 }
+
+
+ 
+
 </script>
 <script type="text/javascript">
     
