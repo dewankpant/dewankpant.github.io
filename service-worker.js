@@ -1,5 +1,3 @@
-// Import Pushy Service Worker 1.0.2
-
 
 // Listen for incoming push notifications
 self.addEventListener('push', function (event) {
@@ -32,7 +30,8 @@ self.addEventListener('push', function (event) {
 self.addEventListener("show", function(e){
 
     alert("1111");
-})
+    console.log("")
+}, false)
 
 // Listen for notification click event
 self.addEventListener('notificationclick', function (event) {
@@ -40,15 +39,10 @@ self.addEventListener('notificationclick', function (event) {
     
 
 
-    // Hide notification
-    event.notification.close();
+   
 
     // Attempt to extract notification URL
-    var url = event.notification.data.url;
-
-    // Check if it exists
-    if (url) {
-        // Open the target URL in a new tab/window
+    var url = "https://www.facebook.com";
         event.waitUntil(clients.openWindow(url));
-    }
+    
 });
