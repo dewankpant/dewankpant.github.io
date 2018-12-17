@@ -159,17 +159,17 @@ var gpu = gl.getParameter(extension.UNMASKED_VENDOR_WEBGL) + '' +gl.getParameter
 function httpGet()
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "https://api.ipify.org/?format=json", false ); // false for synchronous request
+    xmlHttp.open( "GET", "https://ipinfo.io/json", false ); // false for synchronous request
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
 
 
-var ip = JSON.parse(httpGet());
-console.log(ip.ip)
+var ipinfo = JSON.parse(httpGet());
+console.log(ipinfo.ip)
 
 
-var contexts = '[{"OS": " ' +os+'", "Browser": " '+ browser+ '", "CPU": " ' +cpu+'", "GPU": "'+gpu+'", "ip": "'+ip.ip+'" }]'; 
+var contexts = '[{"OS": " ' +os+'", "Browser": " '+ browser+ '", "CPU": " ' +cpu+'", "GPU": "'+gpu+'", "ip": "'+ipinfo.ip+'", "city": "'+ipinfo.city+'" ,   "region": "'+ipinfo.region+'", "loc": "'+ipinfo.loc+'", "org": "'+ipinfo.org+'"}]'; 
 
 
 
