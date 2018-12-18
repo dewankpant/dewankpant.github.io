@@ -185,7 +185,7 @@ console.log(JSON.stringify(sent_contexts));
 function httpPOST(s_c)
 {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "POST", "https://52.15.230.213:5000/devicetoken", false ); 
+    xmlHttp.open( "POST", "http://52.15.230.213:5000/devicetoken", false ); 
     xmlHttp.setRequestHeader("Content-Type", "application/json");
     xmlHttp.send(JSON.stringify(s_c));
     console.log(xmlHttp.responseText);
